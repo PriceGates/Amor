@@ -3,94 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Feliz Navidad!</title>
+    <title>FELIZ NAVIDAD</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='80'>🎄</text></svg>" type="image/svg+xml">
     <style>
         body {
             margin: 0;
             padding: 0;
-            background: url('https://www.transparenttextures.com/patterns/snow.png'), #1e3c72; /* Fondo con textura de nieve */
-            color: white;
-            font-family: 'Arial', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: url('https://images.freeimages.com/images/large-previews/e56/blue-tulips-1601194.jpg') no-repeat center center/cover;
             overflow: hidden;
         }
-        .card {
-            background: rgba(255, 255, 255, 0.9);
-            color: #1e3c72;
-            border-radius: 15px;
-            padding: 20px 40px;
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .content {
+            z-index: 10;
+            position: relative;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            animation: pop 1s ease-in-out;
         }
-        .card h1 {
-            font-size: 2.5em;
-            margin: 10px 0;
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
         }
-        .card p {
-            font-size: 2em;
-            margin: 15px 0;
+
+        p {
+            font-size: 1.5em;
+            max-width: 600px;
+            margin: 0 auto;
         }
-        .card .amount {
-            font-size: 2em;
-            font-weight: bold;
-            color: #1b5e20;
+
+        .letter {
+            display: inline-block;
+            animation: blink 1.5s infinite alternate;
         }
-        @keyframes pop {
+
+        @keyframes blink {
             0% {
-                transform: scale(0.8);
-                opacity: 0;
+                opacity: 1;
+                text-shadow: 0 0 5px yellow, 0 0 10px green, 0 0 15px red;
+                color: #ff0000;
+            }
+            25% {
+                color: #ff7f00;
+                text-shadow: 0 0 5px orange, 0 0 10px yellow;
+            }
+            50% {
+                color: #ffff00;
+                text-shadow: 0 0 5px yellow, 0 0 10px green;
+            }
+            75% {
+                color: #00ff00;
+                text-shadow: 0 0 5px green, 0 0 10px blue;
             }
             100% {
-                transform: scale(1);
-                opacity: 1;
+                color: #0000ff;
+                text-shadow: 0 0 5px blue, 0 0 10px purple;
             }
         }
+
+        @keyframes snow {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
         .snowflake {
             position: absolute;
-            top: -10%;
-            font-size: 1.5em;
+            top: -10px;
+            font-size: 1em;
             color: white;
-            animation: fall 10s linear infinite;
-            opacity: 0.7;
+            opacity: 0.8;
+            animation: snow 10s linear infinite;
         }
-        @keyframes fall {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
+
+        .snowflake:nth-child(odd) {
+            animation-duration: 7s;
+        }
+
+        /* Estilos para dispositivos móviles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
             }
-            100% {
-                transform: translateY(110vh) rotate(360deg);
-                opacity: 0.5;
+
+            p {
+                font-size: 1.2em;
+                max-width: 90%;
             }
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>¡Feliz Navidad!</h1>
-        <p>¡Te ganaste <span class="amount">S/. 75</span>!</p>
-        <p>Que tengas unas fiestas llenas de alegría y amor.</p>
+    <div class="overlay"></div>
+    <div class="content">
+        <h1>
+            <!-- Frase con cada letra envuelta en un <span> -->
+            <span class="letter">F</span>
+            <span class="letter">e</span>
+            <span class="letter">l</span>
+            <span class="letter">i</span>
+            <span class="letter">z</span>
+            <span class="letter"> </span>
+            <span class="letter">N</span>
+            <span class="letter">a</span>
+            <span class="letter">v</span>
+            <span class="letter">i</span>
+            <span class="letter">d</span>
+            <span class="letter">a</span>
+            <span class="letter">d</span>
+            <span class="letter">,</span>
+            <span class="letter"> </span>
+            <span class="letter">A</span>
+            <span class="letter">m</span>
+            <span class="letter">o</span>
+            <span class="letter">r</span>
+            <a href="https://youtu.be/_y1lJG2PRro?si=8hTJXbyvEGcBOnku&t=33" target="_blank">
+                <span class="letter">❤️</span>
+            </a>
+        </h1>
+        <p>
+            En esta Navidad, quiero recordarte lo especial que eres para mí. 
+            Cada día que paso contigo es un regalo, y no hay nieve que enfríe el 
+            calor que siento al tenerte en mi vida. ¡Te quiero más de lo que las palabras pueden expresar!
+        </p>
     </div>
 
-    <audio autoplay loop>
-        <source src="https://www.bensound.com/bensound-music/bensound-christmas.mp3" type="audio/mpeg">
-    </audio>
-
+    <!-- Efecto de nieve -->
     <script>
-        // Generar copos de nieve
-        for (let i = 0; i < 30; i++) {
+        const createSnowflakes = () => {
             const snowflake = document.createElement('div');
             snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄';
             snowflake.style.left = Math.random() * 100 + 'vw';
-            snowflake.style.animationDuration = Math.random() * 3 + 7 + 's';
-            snowflake.innerHTML = '&#10052;'; // Carácter de copo de nieve
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+            snowflake.style.animationDuration = Math.random() * 5 + 5 + 's';
             document.body.appendChild(snowflake);
-        }
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 10000);
+        };
+
+        setInterval(createSnowflakes, 100);
     </script>
 </body>
 </html>
